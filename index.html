@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人简历表格</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        fieldset {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        legend {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #444;
+            padding: 0 10px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+        
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+            width: 15%;
+            font-weight: normal;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: 14px;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+        
+        textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+        
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        input[type="submit"], input[type="reset"] {
+            width: auto;
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        input[type="reset"] {
+            background-color: #f44336;
+        }
+        
+        input[type="checkbox"] {
+            width: auto;
+            margin-right: 5px;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .checkbox-item {
+            margin-right: 15px;
+            white-space: nowrap;
+        }
+        
+        caption {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>个人基本信息</legend>
+            <table>
+                <caption>个人简历</caption>
+                <tr>
+                    <th>姓名</th>
+                    <td><input type="text" name="name" maxlength="20"></td>
+                    <th>性别</th>
+                    <td>
+                        <select name="gender">
+                            <option value="">请选择</option>
+                            <option value="male">男</option>
+                            <option value="female">女</option>
+                        </select>
+                    </td>
+                    <th>年龄</th>
+                    <td><input type="number" name="age" min="18" max="60"></td>
+                </tr>
+                <tr>
+                    <th>籍贯</th>
+                    <td><input type="text" name="hometown" maxlength="50"></td>
+                    <th>联系电话</th>
+                    <td><input type="tel" name="phone" maxlength="15"></td>
+                    <th>电子邮箱</th>
+                    <td><input type="email" name="email" maxlength="50"></td>
+                </tr>
+                <tr>
+                    <th>学历</th>
+                    <td>
+                        <select name="education">
+                            <option value="">请选择</option>
+                            <option value="high-school">高中</option>
+                            <option value="college">大专</option>
+                            <option value="bachelor">本科</option>
+                            <option value="master">硕士</option>
+                            <option value="phd">博士</option>
+                        </select>
+                    </td>
+                    <th>健康状况</th>
+                    <td>
+                        <select name="health">
+                            <option value="">请选择</option>
+                            <option value="excellent">优秀</option>
+                            <option value="good">良好</option>
+                            <option value="normal">一般</option>
+                        </select>
+                    </td>
+                    <th>婚姻状况</th>
+                    <td>
+                        <select name="marital-status">
+                            <option value="">请选择</option>
+                            <option value="single">未婚</option>
+                            <option value="married">已婚</option>
+                            <option value="divorced">离异</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>照片</th>
+                    <td colspan="5"><input type="file" name="photo"></td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset>
+            <legend>教育及求职信息</legend>
+            <table>
+                <tr>
+                    <th>求职意向</th>
+                    <td>
+                        <select name="job-intention">
+                            <option value="">请选择</option>
+                            <option value="developer">开发工程师</option>
+                            <option value="designer">设计师</option>
+                            <option value="manager">项目经理</option>
+                            <option value="sales">销售</option>
+                            <option value="other">其他</option>
+                        </select>
+                    </td>
+                    <th>专业</th>
+                    <td><input type="text" name="major" maxlength="50"></td>
+                    <th>毕业院校</th>
+                    <td>
+                        <select name="university">
+                            <option value="">请选择</option>
+                            <option value="tsinghua">山东大学</option>
+                            <option value="pku">山东理工大学</option>
+                            <option value="fudan">青岛大学</option>
+                            <option value="zju">鲁东大学</option>
+                            <option value="other">其他院校</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset>
+            <legend>技能与证书</legend>
+            <table>
+                <tr>
+                    <th>技能证书</th>
+                    <td>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item"><input type="checkbox" name="certificate" value="english"> 英语证书</div>
+                            <div class="checkbox-item"><input type="checkbox" name="certificate" value="computer"> 计算机证书</div>
+                            <div class="checkbox-item"><input type="checkbox" name="certificate" value="driver"> 驾驶证</div>
+                            <div class="checkbox-item"><input type="checkbox" name="certificate" value="accounting"> 会计证</div>
+                            <div class="checkbox-item"><input type="checkbox" name="certificate" value="other"> 其他</div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset>
+            <legend>个人特长</legend>
+            <table>
+                <tr>
+                    <th>个人特长与爱好</th>
+                    <td>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item"><input type="checkbox" name="hobby" value="sports"> 体育运动</div>
+                            <div class="checkbox-item"><input type="checkbox" name="hobby" value="music"> 音乐</div>
+                            <div class="checkbox-item"><input type="checkbox" name="hobby" value="reading"> 阅读</div>
+                            <div class="checkbox-item"><input type="checkbox" name="hobby" value="travel"> 旅游</div>
+                            <div class="checkbox-item"><input type="checkbox" name="hobby" value="photography"> 摄影</div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset>
+            <legend>工作经历</legend>
+            <table>
+                <tr>
+                    <th>项目经历</th>
+                    <td><textarea name="project-experience" maxlength="500"></textarea></td>
+                </tr>
+                <tr>
+                    <th>自我评价</th>
+                    <td><textarea name="self-evaluation" maxlength="500"></textarea></td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <div class="buttons">
+            <input type="submit" value="提交">
+            <input type="reset" value="重置">
+        </div>
+    </form>
+</body>
+</html>
